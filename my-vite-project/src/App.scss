@@ -73,7 +73,7 @@ button:hover {
         justify-content: center;
         align-items: center;
         margin-right: 10px;
-    
+
         img {
             width: 60%;
         }
@@ -113,12 +113,46 @@ select {
     padding-bottom: 20px;
 }
 
-.filter-options {
-    display: flex;
-    justify-content: space-between;
-    gap: 3rem;
-}
+.filter-container {
+    border-bottom: 1px solid #555;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 
-.filter-options div {
-    flex: 1 1 0;
+
+    .filter-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        width: max-content;
+        height: max-content;
+        cursor: pointer;
+
+        img {
+            height: max-content;
+            width: 30px;
+
+        }
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .filter-options {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        transition: display 0.3s ease-in-out;
+
+        .visible {
+
+            display: block;
+            /* Quando visível, exiba as opções de filtro */
+        }
+
+        div {
+            flex: 1 1 0;
+        }
+    }
 }

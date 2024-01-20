@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: Arial;
   background-color: #f4f4f4;
@@ -109,12 +110,40 @@ select {
   padding-bottom: 20px;
 }
 
-.filter-options {
+.filter-container {
+  border-bottom: 1px solid #555;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.filter-container .filter-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  cursor: pointer;
+}
+.filter-container .filter-title img {
+  height: -moz-max-content;
+  height: max-content;
+  width: 30px;
+}
+.filter-container .filter-title h2 {
+  margin: 0;
+}
+.filter-container .filter-options {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
+  transition: display 0.3s ease-in-out;
 }
-
-.filter-options div {
+.filter-container .filter-options .visible {
+  display: block;
+  /* Quando visível, exiba as opções de filtro */
+}
+.filter-container .filter-options div {
   flex: 1 1 0;
 }/*# sourceMappingURL=App.css.map */
