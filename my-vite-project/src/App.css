@@ -138,10 +138,10 @@ select {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  transition: display 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
 }
-.filter-container .filter-options .visible {
-  display: block;
+.filter-container .filter-options visible {
+  background-color: #5cb85c;
   /* Quando visível, exiba as opções de filtro */
 }
 .filter-container .filter-options div {
