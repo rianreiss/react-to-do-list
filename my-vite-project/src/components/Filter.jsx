@@ -13,12 +13,12 @@ const Filter = ({ filter, setFilter, setSort }) => {
         <div className="filter-container">
             <div onClick={handleToggle} className='filter-title'>
                 <img src={filterSvg} alt='teste' />
-                <h2>Filtrar teste</h2>
+                <h2>Filtrar</h2>
             </div>
-            <div>
+            <div className={`teste ${isExpanded ? 'visible' : ''}`}>
                 {isExpanded ? (
                     <div>
-                        <div className={`filter-options ${isExpanded ? 'visible' : ''}`}>
+                        <div className={`filter-options`}>
                             <div>
                                 <p>Status:</p>
                                 <select value={filter} onChange={(e) => setFilter(e.target.value)}>

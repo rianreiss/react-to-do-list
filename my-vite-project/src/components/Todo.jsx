@@ -1,6 +1,8 @@
 import React from 'react'
 import arrowDownImage from '../assets/arrow-down-short.svg';
 import highPriority from '../assets/exclamation-circle.svg';
+import trash from '../assets/trash-fill.svg';
+import pencil from '../assets/pencil-square.svg';
 
 const Todo = ({ todo, removeTodo, completeTodo }) => {
     return (
@@ -25,10 +27,14 @@ const Todo = ({ todo, removeTodo, completeTodo }) => {
                     ({todo.category})
                 </p>
             </div>
-            <div>
+            <div className='buttons'>
+                <button className='edit' onClick={() => editTodo(todo.id)}>
+                    <img src={pencil} alt="" />
+                </button>
                 <button className='complete' onClick={() => completeTodo(todo.id)}>Complete</button>
-                <button className='edit' onClick={() => editTodo(todo.id)}>Edit</button>
-                <button className='remove' onClick={() => removeTodo(todo.id)}>x</button>
+                <button className='remove' onClick={() => removeTodo(todo.id)}>
+                    <img src={trash} alt="" />
+                </button>
             </div>
         </div>
     );

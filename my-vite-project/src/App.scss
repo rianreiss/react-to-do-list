@@ -3,9 +3,7 @@ body {
     background-color: #f4f4f4;
     padding: 30px;
     color: #333;
-    background-image: url('./img/background.jpg');
-    background-position: center;
-    background-size: cover;
+    background-color: brown;
 }
 
 .app {
@@ -35,13 +33,15 @@ input {
 button {
     background-color: #333974;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
     opacity: .8;
     transition: .3s;
     margin-right: 10px;
+    height: 35px;
+    font-weight: bold;
 }
 
 button:hover {
@@ -83,14 +83,33 @@ button:hover {
         width: 60%;
         margin-right: auto;
     }
-}
 
-.complete {
-    background-color: #5cb85c;
-}
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-.remove {
-    background-color: #D9534f;
+
+        .edit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .complete {
+            background-color: #5cb85c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .remove {
+            background-color: #D9534f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }
 
 .todo-form {
@@ -139,20 +158,31 @@ select {
         }
     }
 
+    .teste {
+        max-height: 0px;
+        transition: max-height .3s ease-in-out;
+    }
+
+    .visible {
+        max-height: 200px;
+        transition: max-height .3s ease-in-out;
+    }
+
     .filter-options {
         display: flex;
         justify-content: space-between;
         gap: 3rem;
-        transition: height 0.3s ease-in-out;
-
-        visible {
-            background-color: #5cb85c;
-
-            /* Quando visível, exiba as opções de filtro */
-        }
+        transition: display 0.3s ease-in-out;
 
         div {
             flex: 1 1 0;
         }
     }
+}
+
+.completedTasks {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+
 }
