@@ -1,17 +1,23 @@
 body {
   font-family: Arial;
-  background-color: #f4f4f4;
   padding: 30px;
-  color: #333;
-  background-color: brown;
+  color: #0c0c0c;
+  background-image: url(./img/background-image.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  text-shadow: 2px 2px 5px rgba(154, 255, 253, 0.7);
 }
 
 .app {
   max-width: 600px;
   margin: 0 auto 300px;
-  background-color: #efefef;
+  background-color: rgba(154, 255, 253, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding: 20px 30px;
   border-radius: 10px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
 h1 {
@@ -41,7 +47,6 @@ button {
   transition: 0.3s;
   margin-right: 10px;
   height: 35px;
-  font-weight: bold;
 }
 
 button:hover {
@@ -57,8 +62,9 @@ button:hover {
 }
 
 .todo {
-  background-color: #FFF;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fef1e0;
+  text-shadow: none;
+  box-shadow: rgba(12, 12, 12, 0.35) 0px 5px 15px;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -80,6 +86,10 @@ button:hover {
   width: 60%;
   margin-right: auto;
 }
+.todo .content .category {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
 .todo .buttons {
   display: flex;
   align-items: center;
@@ -97,7 +107,7 @@ button:hover {
   justify-content: center;
 }
 .todo .buttons .remove {
-  background-color: #D9534f;
+  background-color: #d9534f;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,6 +153,7 @@ select {
   height: -moz-max-content;
   height: max-content;
   width: 30px;
+  filter: drop-shadow(2px 2px 3px rgba(154, 255, 253, 0.9));
 }
 .filter-container .filter-title h2 {
   margin: 0;
@@ -169,4 +180,6 @@ select {
   display: flex;
   justify-content: end;
   margin-bottom: 20px;
+  text-shadow: 1px 2px 5px #9afffd;
+  font-weight: bold;
 }/*# sourceMappingURL=App.css.map */
