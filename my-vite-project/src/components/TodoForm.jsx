@@ -20,9 +20,9 @@ const TodoForm = ({ addTodo }) => {
 
   return (
     <div className='todo-form'>
-      <h2>Create task:</h2>
+      <h2>Criar Tarefa:</h2>
       <form onSubmit={handleSubmit}>
-        <input value={value} type="text" placeholder='Digite o título' onChange={(e) => setValue(e.target.value)} />
+        <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} />
 
         <select value={priority} onChange={(e) => setPriority(e.target.value)}>
           <option value="">Selecione a prioridade</option>
@@ -32,10 +32,10 @@ const TodoForm = ({ addTodo }) => {
         </select>
 
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="">Select a category</option>
-          <option value="work">Work</option>
-          <option value="personal">Personal</option>
-          <option value="study">Study</option>
+          <option value="">Selecione a categoria</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Pessoal">Pessoal</option>
+          <option value="Estudos">Estudos</option>
         </select>
 
         <button type='submit'>Create task</button>

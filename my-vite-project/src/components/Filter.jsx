@@ -22,16 +22,16 @@ const Filter = ({ filter, setFilter, setSort }) => {
                             <div>
                                 <p>Status:</p>
                                 <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-                                    <option value="all">All</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="inCompleted">Not Completed</option>
+                                    <option value="all">Todas</option>
+                                    <option value="completed">Completas</option>
+                                    <option value="inCompleted">Não Completas</option>
                                 </select>
                             </div>
 
                             <div>
-                                <p>Alphabetical  Ordem:</p>
-                                <button onClick={() => setSort("Asc")}>Asc</button>
-                                <button onClick={() => setSort("Desc")}>Desc</button>
+                                <p>Ordem Alfabética:</p>
+                                <button onClick={() => setSort("Asc")}>Crescente</button>
+                                <button onClick={() => setSort("Desc")}>Decrescente</button>
                             </div>
                         </div>
                     </div>
