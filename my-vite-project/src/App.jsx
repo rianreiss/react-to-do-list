@@ -7,6 +7,7 @@ import Filter from './components/Filter';
 import EmptyList from './components/EmptyList';
 
 import './App.css';
+import EditTodoForm from './components/EditTodoForm';
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
     {
       id: 3,
       text: "estudar tal conceito",
-      category: "Estudo",
+      category: "Estudos",
       isCompleted: false,
       isEditing: false,
       priority: 3,
@@ -78,9 +79,23 @@ function App() {
 
   };
 
+  const editTodo = (id) => {
+    const newTodos = [...todos];
+
+    newTodos.map((todo) => todo.id === id ? todo.isEditing = !todo.isEditing : todo);
+
+    setTodos(newTodos);
+
+  };
+
+  const editTodoValue = (text, category, priority, id) => {
+
+    setTodos(todos.map((todo) => todo.id === id ? { ...todos, text, category, priority, isEditing: !todo.isEditing } : todo));
+
+  };
 
   return <div className='app'>
-    <h1>Task List</h1>
+    <h1>Lista de Tarefas</h1>
     <Search search={search} setSearch={setSearch} />
     <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
     <div className="todo-list">
@@ -90,7 +105,7 @@ function App() {
         </div>
       ) : (
         <div>
-          <p className='completedTasks'>Tarefes concluídas: {todos.filter((todo) => todo.isCompleted).length}/{todos.length}.</p>
+          <p className='completedTasks'>Tarefes concluídas: {todos.filter((todo) => todo.isCompleted).length} / {todos.length}</p>
           {todos
             .filter((todo) =>
               filter === "all"
@@ -107,11 +122,21 @@ function App() {
                 : b.text.localeCompare(a.text)
             )
             .map((todo) => (
-              <Todo
-                key={todo.id}
-                todo={todo}
-                removeTodo={removeTodo}
-                completeTodo={completeTodo} />
+              todo.isEditing ? (
+                <EditTodoForm
+                  key={todo.id}
+                  editTodo={editTodoValue}
+                  todo={todo} />
+              ) : (
+                <Todo
+                  key={todo.id}
+                  todo={todo}
+                  removeTodo={removeTodo}
+                  completeTodo={completeTodo}
+                  editTodo={editTodo} />
+
+              )
+
             ))}
         </div>
       )}
