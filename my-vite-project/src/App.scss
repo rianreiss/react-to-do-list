@@ -4,6 +4,7 @@ $color2: #29221f;
 $color3: #13747d;
 $color4: #0abfbc;
 $color41: #9afffd;
+$color42: #051b1b;
 $color5: #fcf7c5;
 $color6: #fef1e0;
 $color7: #f6e6ce;
@@ -14,26 +15,30 @@ $color11: #fff3a3;
 $black1: #0c0c0c; //OIL BLACK
 $black2: #0b1215; //OBSIDIAN
 $black3: #171717; //CHARCOAL GRAY
+$white1: #f0f8ff; //ALICE BLUE
+$white2: #c7c7c7; //GAINSBORO
 
 body {
     font-family: Arial;
     padding: 30px;
     color: $black1;
+
     background-image: url(./img/background-image.jpg);
+    background-color: rgba($black1, 0.4);
     background-size: cover;
     background-attachment: fixed;
-    background-position: top;
-    text-shadow: 2px 2px 5px rgba($color41, 0.7);
+    background-position-y: center;
 }
 
 .app {
     max-width: 600px;
     margin: 0 auto 300px;
-    background-color: rgba($color41, 0.4);
+    background-color: rgba($color42, 0.7);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     padding: 20px 30px;
     border-radius: 10px;
     backdrop-filter: blur(5px);
+    color: $white1;
 }
 
 h1 {
@@ -72,10 +77,87 @@ button:hover {
 .todo-list {
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid $white2;
     display: flex;
     flex-direction: column;
 
+}
+
+.todo-editing {
+    background-color: $color6;
+    border: 3px solid $color8;
+    box-shadow: rgba($color6, 0.5) 0px 0px 15px;
+    padding: 10px;
+    margin: 15px 0px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    color: $black1;
+
+    .priority {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+
+        img {
+            width: 60%;
+        }
+    }
+
+    label {
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-weight: bold;
+        color: rgba($black1, 0.7);
+    }
+
+    input {
+        background-color: rgba($color8, 0.2);
+        color: $black1;
+        border: 1px solid $color8;
+        grid-column: 2/5;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        &::placeholder {
+            color: #ddd;
+        }
+    }
+
+    select {
+        background-color: rgba($color8, 0.2);
+        color: $black1;
+        border: 1px solid $color8;
+        grid-column: 2/5;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        option {
+            color: $black1;
+        }
+    }
+
+    .content {
+        width: 60%;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(3, auto);
+        gap: 10px;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .todo {
@@ -87,6 +169,7 @@ button:hover {
     border-radius: 5px;
     display: flex;
     align-items: center;
+    color: $black1;
 
     .priority {
         height: 40px;
@@ -124,23 +207,19 @@ button:hover {
         }
 
         .complete {
-            background-color: #5cb85c;
+            background-color: #2cca2c;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .remove {
-            background-color: #d9534f;
+            background-color: $color1;
             display: flex;
             align-items: center;
             justify-content: center;
         }
     }
-}
-
-.todo-form {
-    padding-bottom: 1.5rem;
 }
 
 input,
@@ -154,13 +233,22 @@ select {
 
 .filter,
 .search {
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid $white2;
     margin-bottom: 20px;
     padding-bottom: 20px;
+
+    input {
+        background-color: rgba($white2, 0.3);
+        color: $white1;
+
+        &::placeholder {
+            color: #ddd;
+        }
+    }
 }
 
 .filter-container {
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid $white2;
     margin-bottom: 20px;
     padding-bottom: 20px;
 
@@ -177,8 +265,7 @@ select {
         img {
             height: max-content;
             width: 30px;
-            filter: drop-shadow(2px 2px 3px rgba($color41, 0.9));
-        
+
         }
 
         h2 {
@@ -204,6 +291,15 @@ select {
 
         div {
             flex: 1 1 0;
+
+            select {
+                background-color: rgba($white2, 0.3);
+                color: $white1;
+
+                option {
+                    color: $black1;
+                }
+            }
         }
     }
 }
@@ -212,7 +308,6 @@ select {
     display: flex;
     justify-content: end;
     margin-bottom: 20px;
-    text-shadow: 1px 2px 5px rgba($color41, 1);
     font-weight: bold;
 
 }

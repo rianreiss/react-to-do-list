@@ -3,21 +3,22 @@ body {
   padding: 30px;
   color: #0c0c0c;
   background-image: url(./img/background-image.jpg);
+  background-color: rgba(12, 12, 12, 0.4);
   background-size: cover;
   background-attachment: fixed;
-  background-position: top;
-  text-shadow: 2px 2px 5px rgba(154, 255, 253, 0.7);
+  background-position-y: center;
 }
 
 .app {
   max-width: 600px;
   margin: 0 auto 300px;
-  background-color: rgba(154, 255, 253, 0.4);
+  background-color: rgba(5, 27, 27, 0.7);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding: 20px 30px;
   border-radius: 10px;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  color: #f0f8ff;
 }
 
 h1 {
@@ -56,9 +57,80 @@ button:hover {
 .todo-list {
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid #c7c7c7;
   display: flex;
   flex-direction: column;
+}
+
+.todo-editing {
+  background-color: #fef1e0;
+  border: 3px solid #3b2e2a;
+  box-shadow: rgba(254, 241, 224, 0.5) 0px 0px 15px;
+  padding: 10px;
+  margin: 15px 0px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  color: #0c0c0c;
+}
+.todo-editing .priority {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.todo-editing .priority img {
+  width: 60%;
+}
+.todo-editing label {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-weight: bold;
+  color: rgba(12, 12, 12, 0.7);
+}
+.todo-editing input {
+  background-color: rgba(59, 46, 42, 0.2);
+  color: #0c0c0c;
+  border: 1px solid #3b2e2a;
+  grid-column: 2/5;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.todo-editing input::-moz-placeholder {
+  color: #ddd;
+}
+.todo-editing input::placeholder {
+  color: #ddd;
+}
+.todo-editing select {
+  background-color: rgba(59, 46, 42, 0.2);
+  color: #0c0c0c;
+  border: 1px solid #3b2e2a;
+  grid-column: 2/5;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.todo-editing select option {
+  color: #0c0c0c;
+}
+.todo-editing .content {
+  width: 60%;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 10px;
+}
+.todo-editing .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .todo {
@@ -70,6 +142,7 @@ button:hover {
   border-radius: 5px;
   display: flex;
   align-items: center;
+  color: #0c0c0c;
 }
 .todo .priority {
   height: 40px;
@@ -101,20 +174,16 @@ button:hover {
   justify-content: center;
 }
 .todo .buttons .complete {
-  background-color: #5cb85c;
+  background-color: #2cca2c;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .todo .buttons .remove {
-  background-color: #d9534f;
+  background-color: #fc354c;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.todo-form {
-  padding-bottom: 1.5rem;
 }
 
 input,
@@ -128,13 +197,25 @@ select {
 
 .filter,
 .search {
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid #c7c7c7;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
+.filter input,
+.search input {
+  background-color: rgba(199, 199, 199, 0.3);
+  color: #f0f8ff;
+}
+.filter input::-moz-placeholder, .search input::-moz-placeholder {
+  color: #ddd;
+}
+.filter input::placeholder,
+.search input::placeholder {
+  color: #ddd;
+}
 
 .filter-container {
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid #c7c7c7;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
@@ -153,7 +234,6 @@ select {
   height: -moz-max-content;
   height: max-content;
   width: 30px;
-  filter: drop-shadow(2px 2px 3px rgba(154, 255, 253, 0.9));
 }
 .filter-container .filter-title h2 {
   margin: 0;
@@ -175,11 +255,17 @@ select {
 .filter-container .filter-options div {
   flex: 1 1 0;
 }
+.filter-container .filter-options div select {
+  background-color: rgba(199, 199, 199, 0.3);
+  color: #f0f8ff;
+}
+.filter-container .filter-options div select option {
+  color: #0c0c0c;
+}
 
 .completedTasks {
   display: flex;
   justify-content: end;
   margin-bottom: 20px;
-  text-shadow: 1px 2px 5px #9afffd;
   font-weight: bold;
 }/*# sourceMappingURL=App.css.map */
