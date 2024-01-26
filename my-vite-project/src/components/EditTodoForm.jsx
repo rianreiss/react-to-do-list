@@ -10,7 +10,7 @@ const EditTodoForm = ({ editTodo, todo }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        editTodo(text, category, priority, todo.id);
+        editTodo(value, category, priority, todo.id);
 
         setCategory("");
         setPriority("");
