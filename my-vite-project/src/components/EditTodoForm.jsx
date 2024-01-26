@@ -38,7 +38,6 @@ const EditTodoForm = ({ editTodo, todo }) => {
 
                     <label htmlFor="title">Categoria:</label>
                     <select value={category} onChange={(e) => setCategory(e.target.value)} required >
-                        <option value="">Select a category</option>
                         <option value="Trabalho">Trabalho</option>
                         <option value="Pessoal">Pessoal</option>
                         <option value="Estudos">Estudos</option>
@@ -46,7 +45,6 @@ const EditTodoForm = ({ editTodo, todo }) => {
 
                     <label htmlFor="title">Prioridade:</label>
                     <select value={priority} onChange={(e) => setPriority(e.target.value)} required >
-                        <option value="">Selecione a prioridade</option>
                         <option value="1">Alta</option>
                         <option value="2">Normal</option>
                         <option value="3">Baixa</option>
