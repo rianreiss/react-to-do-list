@@ -41,6 +41,8 @@ function App() {
   const [search, setSearch] = useState("");
 
   const [filter, setFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState("");
+  const [priorityFilter, setPriorityFilter] = useState("");
   const [sort, setSort] = useState("Asc");
 
 
@@ -97,7 +99,7 @@ function App() {
   return <div className='app'>
     <h1>Lista de Tarefas</h1>
     <Search search={search} setSearch={setSearch} />
-    <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
+    <Filter filter={filter} setFilter={setFilter} setSort={setSort} categoryFilter={categoryFilter} setCategoryFilter={setCategoryFilter} priorityFilter={priorityFilter} setPriorityFilter={setPriorityFilter} />
     <div className="todo-list">
       {todos.length === 0 ? (
         <div className='todo-list' style={{ alignItems: 'center' }}>
@@ -120,6 +122,16 @@ function App() {
               sort === "Asc"
                 ? a.text.localeCompare(b.text)
                 : b.text.localeCompare(a.text)
+            )
+            .filter((todo) =>
+              categoryFilter === ""
+                ? true
+                : todo.category.search(categoryFilter) >= 0
+            )
+            .filter((todo) =>
+              priorityFilter === ""
+                ? true
+                : todo.priority === parseInt(priorityFilter, 10)
             )
             .map((todo) => (
               todo.isEditing ? (
