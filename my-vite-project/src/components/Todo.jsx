@@ -28,13 +28,13 @@ const Todo = ({ todo, removeTodo, completeTodo, editTodo }) => {
                 </p>
             </div>
             <div className='buttons'>
-                <button className='edit' style={{ backgroundColor: todo.isCompleted ? "rgba(51, 57, 116, 0.5)" : "" }} onClick={() => editTodo(todo.id)}>
+                <button className='edit' disabled={todo.isCompleted} style={{ cursor: todo.isCompleted ? 'not-allowed' : '' , backgroundColor: todo.isCompleted ? "rgba(51, 57, 116, 0.5)" : "" }} onClick={() => editTodo(todo.id)}>
                     <img src={pencil} alt="" />
                 </button>
                 <button className='complete' style={{ boxShadow: todo.isCompleted ? "#333974 0px 0px 0px 2px" : "" }} onClick={() => completeTodo(todo.id)}>
                     {todo.isCompleted ? "Voltar" : "Completar"}
                 </button>
-                <button className='remove' style={{ backgroundColor: todo.isCompleted ? "rgba(217, 83, 79, 0.5)" : "" }} onClick={() => removeTodo(todo.id)}>
+                <button className='remove' disabled={todo.isCompleted} style={{ cursor: todo.isCompleted ? 'not-allowed' : '' , backgroundColor: todo.isCompleted ? "rgba(217, 83, 79, 0.5)" : "" }} onClick={() => removeTodo(todo.id)}>
                     <img src={trash} alt="" />
                 </button>
             </div>

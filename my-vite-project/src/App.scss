@@ -257,15 +257,20 @@ select {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 10px;
-        width: max-content;
+        justify-content: space-between;
+        width: 100%;
         height: max-content;
-        cursor: pointer;
+
+        div{
+            display: flex;
+            cursor: pointer;
+        }
 
         img {
             height: max-content;
             width: 30px;
-
+            margin-right: 10px;
+            cursor: pointer;
         }
 
         h2 {
@@ -284,9 +289,10 @@ select {
     }
 
     .filter-options {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 270px);
         justify-content: space-between;
-        gap: 3rem;
+        gap: .5rem;
         transition: display 0.3s ease-in-out;
 
         div {
