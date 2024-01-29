@@ -92,7 +92,7 @@ function App() {
 
   const editTodoValue = (text, category, priority, id) => {
 
-    setTodos(todos.map((todo) => todo.id === id ? { ...todos, text, category, priority, isEditing: !todo.isEditing } : todo));
+    setTodos(todos.map((todo) => todo.id === id ? { id, text, category, priority, isEditing: !todo.isEditing } : todo));
 
   };
 
@@ -136,8 +136,7 @@ function App() {
             .map((todo) => (
               todo.isEditing ? (
                 <EditTodoForm
-                  key={todo.id}
-                  editTodo={editTodoValue}
+                  editTodoValue={editTodoValue}
                   todo={todo} />
               ) : (
                 <Todo

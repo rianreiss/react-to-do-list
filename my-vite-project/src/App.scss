@@ -160,6 +160,29 @@ button:hover {
     }
 }
 
+.content-add-form {
+
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px 10px;
+
+    label {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    select,
+    input {
+        display: flex;
+        align-items: center;
+        grid-column: 2/6;
+        margin: 0;
+    }
+}
+
 .todo {
     background-color: $color6;
     text-shadow: none;
@@ -261,7 +284,7 @@ select {
         width: 100%;
         height: max-content;
 
-        div{
+        div {
             display: flex;
             cursor: pointer;
         }

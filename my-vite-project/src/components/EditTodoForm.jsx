@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import arrowDownImage from '../assets/arrow-down-short.svg';
 import highPriority from '../assets/exclamation-circle.svg';
 
-const EditTodoForm = ({ editTodo, todo }) => {
+const EditTodoForm = ({ editTodoValue, todo }) => {
     const [value, setValue] = useState(todo.text);
     const [category, setCategory] = useState(todo.category);
     const [priority, setPriority] = useState(todo.priority);
@@ -10,16 +10,12 @@ const EditTodoForm = ({ editTodo, todo }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        editTodo(value, category, priority, todo.id);
-
-        setCategory("");
-        setPriority("");
-        setValue("");
+        editTodoValue(value, category, priority, todo.id);
     };
 
 
     return (
-        <div className=''>
+        <div>
             <form className="todo-editing" onSubmit={handleSubmit}>
                 <div className='priority' style={{}}>
                     {todo.priority == 3 ? (
@@ -52,7 +48,6 @@ const EditTodoForm = ({ editTodo, todo }) => {
                 </div>
 
                 <div className='buttons'>
-
                     <button type='submit'>Editar Tarefa</button>
                 </div>
             </form>

@@ -133,6 +133,26 @@ button:hover {
   justify-content: center;
 }
 
+.content-add-form {
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px 10px;
+}
+.content-add-form label {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.content-add-form select,
+.content-add-form input {
+  display: flex;
+  align-items: center;
+  grid-column: 2/6;
+  margin: 0;
+}
+
 .todo {
   background-color: #fef1e0;
   text-shadow: none;

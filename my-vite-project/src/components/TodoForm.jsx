@@ -20,25 +20,35 @@ const TodoForm = ({ addTodo }) => {
 
   return (
     <div className='todo-form'>
-      <h2>Criar Tarefa:</h2>
       <form onSubmit={handleSubmit}>
-        <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} />
+        <div>
+          <h2>Criar Tarefa:</h2>
+        </div>
 
-        <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-          <option value="">Selecione a prioridade</option>
-          <option value="1">Alta</option>
-          <option value="2">Normal</option>
-          <option value="3">Baixa</option>
-        </select>
+        <div className='content-add-form'>
+          <label htmlFor="title">Título:</label>
+          <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} />
 
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="">Selecione a categoria</option>
-          <option value="Trabalho">Trabalho</option>
-          <option value="Pessoal">Pessoal</option>
-          <option value="Estudos">Estudos</option>
-        </select>
+          <label htmlFor="title">Categoria:</label>
+          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value="">Selecione a categoria</option>
+            <option value="Trabalho">Trabalho</option>
+            <option value="Pessoal">Pessoal</option>
+            <option value="Estudos">Estudos</option>
+          </select>
 
-        <button type='submit'>Create task</button>
+          <label htmlFor="title">Prioridade:</label>
+          <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+            <option value="">Selecione a prioridade</option>
+            <option value="1">Alta</option>
+            <option value="2">Normal</option>
+            <option value="3">Baixa</option>
+          </select>
+        </div>
+
+        <div>
+          <button type='submit'>Create task</button>
+        </div>
       </form>
     </div>
   );
