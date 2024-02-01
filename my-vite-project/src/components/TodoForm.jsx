@@ -27,7 +27,7 @@ const TodoForm = ({ addTodo }) => {
 
         <div className='content-add-form'>
           <label htmlFor="title">Título:</label>
-          <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} />
+          <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} required/>
 
           <label htmlFor="title">Categoria:</label>
           <select value={category} onChange={(e) => setCategory(e.target.value)}>
