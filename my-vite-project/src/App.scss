@@ -335,8 +335,41 @@ select {
 
 .completedTasks {
     display: flex;
-    justify-content: end;
+    justify-content: start;
     margin-bottom: 20px;
     font-weight: bold;
 
+}
+
+.createForm-enter {
+    height: 0px;
+    opacity: 0;
+}
+
+.createForm-enter-active {
+    height: 200px;
+    opacity: 1;
+    transition: all 300ms;
+}
+
+.createForm-enter-done {
+    height: 200px;
+    opacity: 1;
+}
+
+
+.createForm-exit {
+    height: 200px;
+    opacity: 1;
+}
+
+.createForm-exit-active {
+    height: 0px;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.createForm-exit-done {
+    height: 0px;
+    opacity: 0;
 }

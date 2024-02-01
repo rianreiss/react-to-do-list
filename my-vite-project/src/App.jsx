@@ -101,6 +101,8 @@ function App() {
     <Search search={search} setSearch={setSearch} />
     <Filter filter={filter} setFilter={setFilter} setSort={setSort} categoryFilter={categoryFilter} setCategoryFilter={setCategoryFilter} priorityFilter={priorityFilter} setPriorityFilter={setPriorityFilter} />
     <div className="todo-list">
+
+      <TodoForm addTodo={addTodo} />
       {todos.length === 0 ? (
         <div className='todo-list' style={{ alignItems: 'center' }}>
           <EmptyList />
@@ -152,8 +154,6 @@ function App() {
         </div>
       )}
     </div>
-
-    <TodoForm addTodo={addTodo} />
   </div>;
 }
 
