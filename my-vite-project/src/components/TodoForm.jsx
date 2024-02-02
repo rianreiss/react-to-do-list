@@ -28,18 +28,21 @@ const TodoForm = ({ addTodo }) => {
 
 
   return (
-    <div className='todo-form'>
-      <button onClick={() => openForm()}>
-        <img src={plus} alt="" />
-      </button>
+    <div>
+      <div className='addTodo'>
+        <button title='Adicionar nova tarefa' onClick={() => openForm()}>
+          <img src={plus} alt="" />
+        </button>
+      </div>
 
       <CSSTransition
-      in={form}
-      timeout={300}
-      classNames="createForm"
+        in={form}
+        timeout={300}
+        classNames="createForm"
+        unmountOnExit
 
       >
-        <form onSubmit={handleSubmit}>
+        <form className='todo-form' onSubmit={handleSubmit}>
           <div>
             <h2>Criar Tarefa:</h2>
           </div>

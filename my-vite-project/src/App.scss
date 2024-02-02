@@ -230,7 +230,7 @@ button:hover {
         }
 
         .complete {
-            background-color: #2cca2c;
+            background-color: #008000;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -372,4 +372,21 @@ select {
 .createForm-exit-done {
     height: 0px;
     opacity: 0;
+}
+
+.todo-form {
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.addTodo {
+    display: flex;
+    justify-content: end;
+    
+    button {
+        background-color: #008000;
+        box-shadow: rgba(255, 255, 255, 0.699) 0px 5px 15px, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
 }
