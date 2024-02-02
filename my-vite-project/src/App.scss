@@ -390,3 +390,36 @@ select {
         box-shadow: rgba(255, 255, 255, 0.699) 0px 5px 15px, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     }
 }
+
+.openFilter-enter {
+    height: 0px;
+    opacity: 0;
+}
+
+.openFilter-enter-active {
+    height: 200px;
+    opacity: 1;
+    transition: all 300ms;
+}
+
+.openFilter-enter-done {
+    height: 200px;
+    opacity: 1;
+}
+
+
+.openFilter-exit {
+    height: 200px;
+    opacity: 1;
+}
+
+.openFilter-exit-active {
+    height: 0px;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.openFilter-exit-done {
+    height: 0px;
+    opacity: 0;
+}
