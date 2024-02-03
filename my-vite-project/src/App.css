@@ -12,7 +12,7 @@ body {
 .app {
   max-width: 600px;
   margin: 0 auto 300px;
-  background-color: rgba(5, 27, 27, 0.7);
+  background-color: rgba(5, 27, 27, 0.8);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding: 20px 30px;
   border-radius: 10px;
@@ -276,6 +276,11 @@ select {
   gap: 0.5rem;
   transition: display 0.3s ease-in-out;
 }
+.filter-container .filter-options button {
+  background-color: #f0f8ff;
+  color: #0c0c0c;
+  font-weight: bold;
+}
 .filter-container .filter-options div {
   flex: 1 1 0;
 }
@@ -334,6 +339,29 @@ select {
 }
 .todo-form button {
   margin: 15px 0;
+  background-color: #f0f8ff;
+  color: #0c0c0c;
+  font-weight: bold;
+}
+.todo-form input,
+.todo-form select {
+  background-color: rgba(199, 199, 199, 0.3);
+  color: #f0f8ff;
+}
+.todo-form input::-moz-placeholder, .todo-form select::-moz-placeholder {
+  color: #ddd;
+}
+.todo-form input::placeholder,
+.todo-form select::placeholder {
+  color: #ddd;
+}
+.todo-form input option,
+.todo-form select option {
+  color: #0c0c0c;
+}
+.todo-form .submit {
+  display: flex;
+  justify-content: center;
 }
 
 .addTodo {
@@ -388,4 +416,8 @@ select {
 .openFilter-exit-done {
   height: 0px;
   opacity: 0;
+}
+
+.no-task {
+  margin: 25px 0 0 0;
 }/*# sourceMappingURL=App.css.map */

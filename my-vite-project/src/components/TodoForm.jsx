@@ -47,7 +47,7 @@ const TodoForm = ({ addTodo }) => {
 
           <div style={{ marginTop: '20px' }} className='content-add-form'>
             <label htmlFor="title">Título:</label>
-            <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} required />
+            <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} required autoFocus/>
 
             <label htmlFor="title">Categoria:</label>
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -66,7 +66,7 @@ const TodoForm = ({ addTodo }) => {
             </select>
           </div>
 
-          <div>
+          <div className='submit'>
             <button type='submit'>Criar Tarefa</button>
           </div>
         </form>

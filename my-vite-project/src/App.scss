@@ -33,7 +33,7 @@ body {
 .app {
     max-width: 600px;
     margin: 0 auto 300px;
-    background-color: rgba($color42, 0.7);
+    background-color: rgba($color42, 0.8);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     padding: 20px 30px;
     border-radius: 10px;
@@ -317,6 +317,13 @@ select {
         gap: .5rem;
         transition: display 0.3s ease-in-out;
 
+        button {
+
+            background-color: $white1;
+            color: $black1;
+            font-weight: bold;
+        }
+
         div {
             flex: 1 1 0;
 
@@ -382,6 +389,28 @@ select {
 
     button {
         margin: 15px 0;
+        background-color: $white1;
+        color: $black1;
+        font-weight: bold;
+    }
+
+    input,
+    select {
+        background-color: rgba($white2, 0.3);
+        color: $white1;
+
+        &::placeholder {
+            color: #ddd;
+        }   
+
+        option {
+            color: $black1;
+        }
+    }
+
+    .submit {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -389,7 +418,7 @@ select {
     display: flex;
     justify-content: end;
     align-items: center;
-    
+
     button {
         display: flex;
         align-items: center;
@@ -441,4 +470,8 @@ select {
 .openFilter-exit-done {
     height: 0px;
     opacity: 0;
+}
+
+.no-task {
+    margin: 25px 0 0 0;
 }
