@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import plus from '../assets/clipboard2-plus.svg';
+import plus from '../assets/plus-circle.svg';
 
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState('');
@@ -31,23 +31,21 @@ const TodoForm = ({ addTodo }) => {
     <div>
       <div className='addTodo'>
         <button title='Adicionar nova tarefa' onClick={() => openForm()}>
+          <h2>Adicionar tarefa</h2>
           <img src={plus} alt="" />
         </button>
       </div>
 
       <CSSTransition
         in={form}
-        timeout={300}
+        timeout={3000}
         classNames="createForm"
         unmountOnExit
 
       >
         <form className='todo-form' onSubmit={handleSubmit}>
-          <div>
-            <h2>Criar Tarefa:</h2>
-          </div>
 
-          <div className='content-add-form'>
+          <div style={{ marginTop: '20px' }} className='content-add-form'>
             <label htmlFor="title">Título:</label>
             <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} required />
 
@@ -69,7 +67,7 @@ const TodoForm = ({ addTodo }) => {
           </div>
 
           <div>
-            <button type='submit'>Create task</button>
+            <button type='submit'>Criar Tarefa</button>
           </div>
         </form>
       </CSSTransition>

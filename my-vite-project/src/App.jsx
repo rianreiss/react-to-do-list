@@ -110,7 +110,7 @@ function App() {
         </div>
       ) : (
         <div>
-          <p className='completedTasks'>Tarefes concluídas: {todos.filter((todo) => todo.isCompleted).length} / {todos.length}</p>
+          <p className='completedTasks'>Tarefas concluídas: {todos.filter((todo) => todo.isCompleted).length} / {todos.length}</p>
           {todos
             .filter((todo) =>
               filter === "all"

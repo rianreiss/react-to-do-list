@@ -56,8 +56,6 @@ button:hover {
 
 .todo-list {
   margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #c7c7c7;
   display: flex;
   flex-direction: column;
 }
@@ -198,6 +196,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 85px;
 }
 .todo .buttons .remove {
   background-color: #fc354c;
@@ -301,18 +300,18 @@ select {
 }
 
 .createForm-enter-active {
-  height: 200px;
+  height: 180px;
   opacity: 1;
   transition: all 300ms;
 }
 
 .createForm-enter-done {
-  height: 200px;
+  height: 180px;
   opacity: 1;
 }
 
 .createForm-exit {
-  height: 200px;
+  height: 180px;
   opacity: 1;
 }
 
@@ -327,17 +326,36 @@ select {
   opacity: 0;
 }
 
+.todo-form {
+  border-bottom: 1px solid #c7c7c7;
+}
 .todo-form h2 {
   margin: 0;
+}
+.todo-form button {
+  margin: 15px 0;
 }
 
 .addTodo {
   display: flex;
   justify-content: end;
+  align-items: center;
 }
 .addTodo button {
-  background-color: #008000;
-  box-shadow: rgba(255, 255, 255, 0.699) 0px 5px 15px, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+  margin: 0px 10px;
+  height: 30px;
+  gap: 10px;
+}
+.addTodo button h2 {
+  margin: 0;
+}
+.addTodo button img {
+  width: 30px;
+  height: 30px;
 }
 
 .openFilter-enter {
