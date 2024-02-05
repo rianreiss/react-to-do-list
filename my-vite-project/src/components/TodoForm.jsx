@@ -38,7 +38,7 @@ const TodoForm = ({ addTodo }) => {
 
       <CSSTransition
         in={form}
-        timeout={3000}
+        timeout={300}
         classNames="createForm"
         unmountOnExit
 
