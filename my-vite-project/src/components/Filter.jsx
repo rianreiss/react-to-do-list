@@ -1,35 +1,46 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import filterSvg from '../assets/funnel.svg';
 import resertSvg from '../assets/reset-arrow.svg';
 
 const Filter = ({ filter, setFilter, setSort, categoryFilter, setCategoryFilter, priorityFilter, setPriorityFilter }) => {
     const [filterContainer, setFilterContainer] = useState(false);
+    const filterRef = useRef(null);
 
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (filterRef.current && !filterRef.current.contains(event.target)) {
+                setFilterContainer(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, [filterRef]);
 
     const openFilter = () => {
         setFilterContainer(!filterContainer);
-
     };
 
     const resetFilters = () => {
         setFilter('all');
         setCategoryFilter('');
         setPriorityFilter('');
-    }
-
+    };
 
     return (
-        <div className="filter-container">
+        <div className="filter-container" ref={filterRef}>
             <div className='filter-title'>
                 <div onClick={openFilter}>
                     <img src={filterSvg} />
                     <h2>Filtrar</h2>
                 </div>
-                {filter == "all" && categoryFilter == "" && priorityFilter == "" ? (
+                {filter === "all" && categoryFilter === "" && priorityFilter === "" ? (
                     ""
                 ) : (
-
                     <img src={resertSvg} onClick={resetFilters} title='Resetar filtros' />
                 )}
             </div>
@@ -39,7 +50,6 @@ const Filter = ({ filter, setFilter, setSort, categoryFilter, setCategoryFilter,
                 timeout={300}
                 classNames="openFilter"
                 unmountOnExit
-
             >
                 <div>
                     <div className={`filter-options`}>
@@ -84,4 +94,4 @@ const Filter = ({ filter, setFilter, setSort, categoryFilter, setCategoryFilter,
     );
 };
 
-export default Filter
+export default Filter;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import plus from '../assets/plus-circle.svg';
 
@@ -7,6 +7,21 @@ const TodoForm = ({ addTodo }) => {
   const [category, setCategory] = useState('');
   const [priority, setPriority] = useState('');
   const [form, setForm] = useState(false);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        setForm(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [formRef]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,10 +37,7 @@ const TodoForm = ({ addTodo }) => {
 
   const openForm = () => {
     setForm(!form);
-
   };
-
-
 
   return (
     <div>
@@ -41,9 +53,8 @@ const TodoForm = ({ addTodo }) => {
         timeout={300}
         classNames="createForm"
         unmountOnExit
-
       >
-        <form className='todo-form' onSubmit={handleSubmit}>
+        <form className='todo-form' onSubmit={handleSubmit} ref={formRef}>
 
           <div className='content-add-form'>
             <label htmlFor="title">Título:</label>
