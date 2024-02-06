@@ -45,7 +45,7 @@ const TodoForm = ({ addTodo }) => {
       >
         <form className='todo-form' onSubmit={handleSubmit}>
 
-          <div style={{ marginTop: '20px' }} className='content-add-form'>
+          <div className='content-add-form'>
             <label htmlFor="title">Título:</label>
             <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} required autoFocus/>
 

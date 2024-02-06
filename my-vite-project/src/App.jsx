@@ -12,30 +12,7 @@ import EditTodoForm from './components/EditTodoForm';
 
 function App() {
   const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: "criar funcionalidade x no sistema",
-      category: "Trabalho",
-      isCompleted: false,
-      isEditing: false,
-      priority: 1,
-    },
-    {
-      id: 2,
-      text: "fazer tal coisa",
-      category: "Pessoal",
-      isCompleted: false,
-      isEditing: false,
-      priority: 2,
-    },
-    {
-      id: 3,
-      text: "estudar tal conceito",
-      category: "Estudos",
-      isCompleted: false,
-      isEditing: false,
-      priority: 3,
-    },
+    
   ]);
 
   const [search, setSearch] = useState("");
