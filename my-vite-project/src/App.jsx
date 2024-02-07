@@ -111,7 +111,7 @@ function App() {
             .filter((todo) =>
               priorityFilter === ""
                 ? true
-                : todo.priority === parseInt(priorityFilter, 10)
+                : todo.priority == parseInt(priorityFilter, 10)
             )
             .map((todo) => (
               todo.isEditing ? (
