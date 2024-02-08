@@ -14,3 +14,7 @@ Use clicando no link do **GitHub Pages** abaixo.
 - Adicionar novas tarefas.
 - Concluir, editar ou deletar tarefas existentes.
 - Filtragem das tarefas por critérios.
+
+##
+
+_Veja no [LinkedIn](https://www.linkedin.com/posts/riancarvalhoreis_reactjs-react-vite-activity-7161312721592889345-LI1G?utm_source=share&utm_medium=member_ios)_
