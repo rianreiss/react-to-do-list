@@ -40,7 +40,7 @@ const TodoForm = ({ addTodo }) => {
   };
 
   return (
-    <div>
+    <div ref={formRef}>
       <div className='addTodo'>
         <button title='Adicionar nova tarefa' onClick={() => openForm()}>
           <h2>Adicionar tarefa</h2>
@@ -54,14 +54,14 @@ const TodoForm = ({ addTodo }) => {
         classNames="createForm"
         unmountOnExit
       >
-        <form className='todo-form' onSubmit={handleSubmit} ref={formRef}>
+        <form className='todo-form' onSubmit={handleSubmit}>
 
           <div className='content-add-form'>
             <label htmlFor="title">Título:</label>
-            <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} required autoFocus/>
+            <input value={value} type="text" placeholder='Digite o título...' onChange={(e) => setValue(e.target.value)} required autoFocus />
 
             <label htmlFor="title">Categoria:</label>
-            <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <select value={category} onChange={(e) => setCategory(e.target.value)} required>
               <option value="">Selecione a categoria</option>
               <option value="Trabalho">Trabalho</option>
               <option value="Pessoal">Pessoal</option>
