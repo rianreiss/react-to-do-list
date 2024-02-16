@@ -6,9 +6,9 @@ Use clicando no link do **GitHub Pages** abaixo.
 
 ### Tecnologias
 - React JS <img align="center" alt="react" height="26px" width="26px" src="https://raw.githubusercontent.com/BeardedBear/bearded-icons/master/icons/reactts.svg" />
-- Vite <img align="center" alt="react" height="26px" width="26px" src="https://raw.githubusercontent.com/BeardedBear/bearded-icons/master/icons/vite.svg" />
-- Javascript <img align="center" alt="react" width="26px" src="https://raw.githubusercontent.com/BeardedBear/bearded-icons/master/icons/js.svg" />
-- SCSS <img align="center" alt="react" height="26px" width="26px" src="https://raw.githubusercontent.com/BeardedBear/bearded-icons/master/icons/scss.svg" />
+- Vite <img align="center" alt="vite" height="26px" width="26px" src="https://raw.githubusercontent.com/BeardedBear/bearded-icons/master/icons/vite.svg" />
+- Javascript <img align="center" alt="javascript" width="26px" src="https://raw.githubusercontent.com/BeardedBear/bearded-icons/master/icons/js.svg" />
+- SCSS <img align="center" alt="sass" height="26px" width="26px" src="https://raw.githubusercontent.com/BeardedBear/bearded-icons/master/icons/scss.svg" />
 
 ### Funcionalidades
 - Adicionar novas tarefas.
