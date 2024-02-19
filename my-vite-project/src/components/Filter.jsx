@@ -14,6 +14,7 @@ const Filter = ({ filter, setFilter, setSort, categoryFilter, setCategoryFilter,
             }
         };
 
+        
         document.addEventListener('mousedown', handleOutsideClick);
 
         return () => {
